@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center mt-3">
+      <h3>South African Rand vs Other Currencies: GraphQL Data</h3>
+      <p>Count: {{rates.length}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div *ngIf="loading" class="text-danger">
+        Loading...
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div *ngIf="error" class="text-danger">
+        Error :(
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngIf="rates" class="col m-3">
+      <ul *ngFor="let rate of rates" class="list-group">
+        <li class="list-group-item m-1">
+          <span class="float-left text-info">
+            {{rate.currency}}:
+          </span>
+          <span class="float-right text-primary">
+            R {{rate.rate}}
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
